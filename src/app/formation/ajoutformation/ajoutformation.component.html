@@ -1,0 +1,91 @@
+<div class="container">
+  <div style="display: flex; justify-content: space-between;margin: 32px 24px;">
+
+    <h2>Ajouter Formation</h2>
+    <button class="btn btn-primary col-2" routerLink="/dashboard/list-formation">Liste</button>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="row ">
+  <div class="col-12 ">
+    <div class="card">
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-xl-12">
+            <div class="mb-3">
+              <label for="projectname" class="form-label"> Nom de la Formation </label>
+              <input type="text" [(ngModel)]="formation.nom" id="projectname" class="form-control"
+                placeholder="Saisir un titre de formation">
+            </div>
+
+            <div class="mb-3">
+              <label for="project-overview" class="form-label">Description</label>
+              <textarea class="form-control" [(ngModel)]="formation.description" id="project-overview" rows="5"
+                placeholder="Saisir une description de l'emploi"></textarea>
+            </div>
+
+            <!-- Date View -->
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label"> Date</label>
+              <input type="datetime-local" [(ngModel)]="formation.dateDebut" class="form-control">
+            </div>
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label"> Date fin</label>
+              <input type="datetime-local" [(ngModel)]="formation.dateFin" class="form-control">
+            </div>
+            
+
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label"> Lieu</label>
+              <input type="text" [(ngModel)]="formation.lieu" class="form-control">
+            </div>
+           
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label"> Capacité Maximale</label>
+              <input type="text" [(ngModel)]="formation.capaciteMaximale" class="form-control">
+            </div>
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label">Rating</label>
+              <input type="number" [(ngModel)]="formation.capaciteMaximale" class="form-control">
+            </div>
+
+
+
+             
+
+              <div class="mb-3 position-relative" id="datepicker1">
+                <label class="form-label mt-2"> Prix</label>
+                <input type="text" [(ngModel)]="formation.coutParticipation" class="form-control">
+              </div>
+            
+
+
+
+
+
+
+            <!-- end col-->
+
+
+            <!-- end col-->
+          </div>
+          <!-- end row -->
+
+        </div>
+        <!-- end card-body -->
+      </div>
+      <!-- end card-->
+    </div>
+    <!-- end col-->
+  </div>
+  <!-- end row-->
+</div>
+  <button class="btn btn-primary m-2 from-control  " (click)="ajout() ">Ajouter formation </button>
+  <br>
+  <br>
+  <br>

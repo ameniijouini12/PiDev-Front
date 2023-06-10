@@ -1,0 +1,125 @@
+<div class="container">
+  <div  style="display: flex; justify-content: space-between;margin: 32px 24px;">
+
+      <h2>Ajouter un Etudiant</h2>
+      <button class="btn btn-primary col-2" routerLink="/dashboard/list-us">Liste</button>
+  </div>
+
+
+</div>
+
+<div class="container mt-5">
+  <div class="row" style="display: flex;justify-content: center;align-items:center">
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit() " class="col-6">
+      <div class="form-group mb-3">
+        <input pattern="[a-zA-Z ]*" formControlName="name"  type="text" [(ngModel)]="etudiant.name"   class="form-control m-2" placeholder="nom">
+        <div *ngIf="f['name'].touched && f['name'].invalid" class="text-danger">
+          <div *ngIf="f['name'].errors && f['name'].errors['required']">Inserer le nom</div>
+          <div *ngIf="f['name'].errors?.['pattern'] ">seulement des lettres</div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <input pattern="[a-zA-Z ]*" formControlName="lastname" type="text" [(ngModel)]="etudiant.lastname"   class="form-control m-2" placeholder="prenom">
+        <div *ngIf="f['lastname'].touched && f['lastname'].invalid" class="text-danger">
+          <div *ngIf="f['lastname'].errors && f['lastname'].errors['required']">Inserer le prenom</div>
+          <div *ngIf="f['lastname'].errors?.['pattern'] ">seulement des lettres</div>
+        </div>
+      </div>
+
+
+      <div class="form-group mb-3">
+        <input pattern="[a-zA-Z ]*" formControlName="genre" type="text" [(ngModel)]="etudiant.genre"   class="form-control m-2" placeholder="genre">
+        <div *ngIf="f['genre'].touched && f['genre'].invalid" class="text-danger">
+          <div *ngIf="f['genre'].errors && f['genre'].errors['required']">homme ou femme</div>
+          <div *ngIf="f['genre'].errors?.['pattern'] ">homme ou femme</div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <input pattern="(1[0-9]|[2-9][0-9]|100)" formControlName="age" type="number" [(ngModel)]="etudiant.age"   class="form-control m-2" placeholder="age">
+        <div *ngIf="f['age'].touched && f['age'].invalid" class="text-danger">
+          <div *ngIf="f['age'].errors && f['age'].errors['required']">age obligatoire</div>
+          <div *ngIf="f['age'].errors?.['pattern'] "> 10 ans< </div>
+        </div>
+      </div>
+
+
+
+      <div class=" form-group mb-3 " >
+        <input formControlName="image" type="file" (change)="selectedimage($event)" class="form-control m-2"
+          placeholder="image">
+        <div *ngIf="f['image'].touched && f['image'].invalid" class="text-danger">
+          <div *ngIf="f['image'].errors && f['image'].errors['required']">selectionner une image</div>
+        </div>
+      </div>
+
+
+      <div class="form-group mb-3">
+        <input pattern="[a-zA-Z ]*" formControlName="specialite" type="text" [(ngModel)]="etudiant.specialite"   class="form-control m-2" placeholder="specialite">
+        <div *ngIf="f['specialite'].touched && f['specialite'].invalid" class="text-danger">
+          <div *ngIf="f['specialite'].errors && f['specialite'].errors['required']">Inserer le specialite</div>
+          <div *ngIf="f['specialite'].errors?.['pattern'] ">seulement des lettres</div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <input pattern="[(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?] " formControlName="linkFb" type="text" [(ngModel)]="etudiant.linkFb"   class="form-control m-2" placeholder="lien de facebook">
+        <div *ngIf="f['linkFb'].touched && f['linkFb'].invalid" class="text-danger">
+          <div *ngIf="f['linkFb'].errors && f['linkFb'].errors['required']"> lien de fb</div>
+          <div *ngIf="f['linkFb'].errors?.['pattern'] ">http.......?</div>
+        </div>
+      </div>
+
+
+      <div class="form-group mb-3">
+        <input pattern="[(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?] " formControlName="linkLn" type="text" [(ngModel)]="etudiant.linkLn"   class="form-control m-2" placeholder="lien de linkedin">
+        <div *ngIf="f['linkLn'].touched && f['linkLn'].invalid" class="text-danger">
+          <div *ngIf="f['linkLn'].errors && f['linkLn'].errors['required']"> lien de linkedin</div>
+          <div *ngIf="f['linkLn'].errors?.['pattern'] ">http.......?</div>
+        </div>
+      </div>
+
+
+
+      <div class="form-group mb-3">
+        <input pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="email" type="text" [(ngModel)]="etudiant.email"   class="form-control m-2" placeholder="email">
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger">
+          <div *ngIf="f['email'].errors && f['email'].errors['required']">ajouter email</div>
+          <div *ngIf="f['email'].errors?.['pattern'] ">aaaaa@gmail.com !!</div>
+        </div>
+      </div>
+
+
+      <div class="form-group mb-3">
+        <input pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$" formControlName="password" type="password" [(ngModel)]="etudiant.password"   class="form-control m-2" placeholder="password">
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger">
+          <div *ngIf="f['password'].errors && f['password'].errors['required']">ajouter mot de passe</div>
+          <div *ngIf="f['password'].errors?.['pattern'] ">6 caractétre [lettre majuscule + chiffre ]</div>
+        </div>
+      </div>
+
+
+      <div class="form-group mb-3">
+        <input pattern="^((\\+216-?)|0)?[0-9]{8}$" formControlName="tel" type="text" [(ngModel)]="etudiant.tel"   class="form-control m-2" placeholder="tel">
+        <div *ngIf="f['tel'].touched && f['tel'].invalid" class="text-danger">
+          <div *ngIf="f['tel'].errors && f['tel'].errors['required']">téléphone obligatoire</div>
+          <div *ngIf="f['tel'].errors?.['pattern'] ">22 555 999 () 8 chiffres</div>
+        </div>
+      </div>
+
+
+     
+
+      <div style="display: flex; justify-content: space-between;margin: 32px 24px;" class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="ajout() ">Ajouter</button>
+        <button type="button" (click)="onReset()" class="btn btn-warning float-right">réinitialiser</button>
+
+
+      </div>
+
+    </form>
+  </div>
+</div>

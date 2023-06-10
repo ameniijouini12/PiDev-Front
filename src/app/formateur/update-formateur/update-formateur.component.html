@@ -1,0 +1,119 @@
+
+  <div class="container mt-5"  >
+
+    <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Personal Info</h5>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" [(ngModel)]="formateur.name"  class="form-control"  placeholder="Enter first name">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label  class="form-label">Last Name</label>
+                <input type="text" [(ngModel)]="formateur.lastname"  class="form-control"  placeholder="Enter last name">
+            </div>
+        </div> <!-- end col -->
+        <div class="col-md-6">
+          <div class="mb-3">
+              <label class="form-label">GENRE</label>
+              <input type="text"   [(ngModel)]="formateur.genre"     class="form-control"  placeholder="Enter HF">
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+            <label  class="form-label">AGE</label>
+            <input type="number" [(ngModel)]="formateur.age"   class="form-control"  placeholder="Enter your Age">
+        </div>
+    </div>
+    </div> <!-- end row -->
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="useremail" class="form-label">Email Address</label>
+                <input type="email" [(ngModel)]="formateur.email" class="form-control"  placeholder="Enter email">
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="userpassword" class="form-label">Password</label>
+                <input type="password" [(ngModel)]="formateur.password" class="form-control" id="userpassword" placeholder="Enter password">
+
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+   <div class="row">
+      <div class="col-md-6">
+          <div class="mb-3">
+              <label class="form-label">Image</label>
+              <input type="file" (change)="selectedimage($event)" class="form-control" >
+
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="mb-3">
+              <label  class="form-label">Specialite</label>
+              <input type="text" [(ngModel)]="formateur.specialite" class="form-control"  placeholder="Enter specialite">
+
+          </div>
+      </div> <!-- end col -->
+  </div> <!-- end row -->
+  <div class="row">
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label  class="form-label">Tel</label>
+            <input type="tel" [(ngModel)]="formateur.tel" class="form-control"  placeholder="Enter TEL">
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label  class="form-label">ROLE</label>
+            <input type="text" [(ngModel)]="formateur.role" class="form-control" placeholder="Enter ROLE">
+
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+
+
+    <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-earth me-1"></i> Social</h5>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label  class="form-label">Facebook</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="mdi mdi-facebook"></i></span>
+                    <input type="text" [(ngModel)]="formateur.linkFb" class="form-control"  placeholder="Url">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+              <label  class="form-label">Linkedin</label>
+              <div class="input-group">
+                  <span class="input-group-text"><i class="mdi mdi-linkedin"></i></span>
+                  <input type="text"[(ngModel)]="formateur.linkFb" class="form-control"  placeholder="Url">
+              </div>
+          </div>
+      </div> <!-- end col -->
+
+    </div> <!-- end row -->
+
+    <div class="row">
+
+    </div> <!-- end row -->
+
+
+    <div class="text-end">
+        <button type="submit" class="btn btn-success mt-2" (click)="update()" ><i class="mdi mdi-content-save"></i> Save</button>
+    </div>
+
+</div>

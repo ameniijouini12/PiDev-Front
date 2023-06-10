@@ -1,0 +1,135 @@
+<br>
+<br>
+<div class="row">
+  <div class="col-xl-4 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title text-uppercase text-muted mb-0">NOMBRE D'ELEVES</h5>
+            <br>
+            <span class="h2 font-weight-bold mb-0"> <td>{{ etudiant.length }}</td></span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+          </div>
+        </div>
+      <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title text-uppercase text-muted mb-0">NOMBRE DE FORMATEURS</h5>
+            <br>
+            <span class="h2 font-weight-bold mb-0">{{ formateur.length }}</span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title text-uppercase text-muted mb-0">NOMBRE DES FORMATIONS</h5>
+            <br>
+            <span class="h2 font-weight-bold mb-0"><td>{{ formation.length }}</td></span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+        </div>
+       <br>
+      </div>
+    </div>
+  </div>
+
+</div>
+<br>
+<div class="row">
+  <div class="col-xl-4 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title text-uppercase text-muted mb-0">NOMBRE EMPLOIS</h5>
+            <br>
+            <span class="h2 font-weight-bold mb-0">{{emploi.length}}</span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+              <i class="fas fa-percent"></i>
+            </div>
+          </div>
+        </div>
+       <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title text-uppercase text-muted mb-0">NOMBRE QUESTIONS</h5>
+            <br>
+            <span class="h2 font-weight-bold mb-0">{{ question.length }}</span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+          </div>
+        </div>
+       <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6">
+    <div class="card card-stats mb-4 mb-xl-0">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title text-uppercase text-muted mb-0">NOMBRE REPONSES</h5>
+            <br>
+            <span class="h2 font-weight-bold mb-0">{{reponse.length}}</span>
+          </div>
+          <div class="col-auto">
+            <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div class="chart-wrapper">
+  <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="lineChartLegend"
+      [chartType]="'line'"
+      [plugins]="lineChartPlugins">
+  </canvas>
+</div>

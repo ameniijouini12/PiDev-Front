@@ -1,0 +1,169 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <div class="row">
+      <div class="col-12">
+          <div class="page-title-box">
+
+              <h4 class="page-title">Profile</h4>
+          </div>
+      </div>
+  </div>
+  <!-- end page title -->
+
+  <div class="row">
+      <div class="col-xl-4 col-lg-5">
+          <div class="card text-center">
+              <div class="card-body">
+                  <img [src]="endpoint.url+'getimageetudiant/' + etudiant.image" class="rounded-circle avatar-lg img-thumbnail"
+                  alt="profile-image">
+
+                  <h4 class="mb-0 mt-2"> {{ etudiant.name + ' ' + etudiant.lastname }} </h4>
+                  <p class="text-muted font-14">{{etudiant.specialite}}</p>
+
+
+
+                  <div class="text-start mt-3">
+                      <h4 class="font-13 text-uppercase">About Me :</h4>
+
+                      <p class="text-muted mb-2 font-13"><strong>NOM :</strong> <span class="ms-2">{{etudiant.name}}</span></p>
+                      <p class="text-muted mb-2 font-13"><strong>PRENOM :</strong> <span class="ms-2">{{etudiant.lastname}}</span></p>
+                      <p class="text-muted mb-1 font-13"><strong>Genre :</strong> <span class="ms-2">{{etudiant.genre}}</span></p>
+                      <p class="text-muted mb-2 font-13"><strong>N DE TELEPHONE :</strong><span class="ms-2">{{etudiant.tel}}</span></p>
+
+                      <p class="text-muted mb-2 font-13"><strong>E-mail :</strong> <span class="ms-2 ">{{etudiant.email}}</span></p>
+
+
+                  </div>
+
+                  <ul class="social-list list-inline mt-3 mb-0">
+                      <li class="list-inline-item">
+                          <a href="" class="social-list-item border-primary text-primary"><i
+                                  class="mdi mdi-facebook"><a href=></a></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                          <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i
+                                  class="mdi mdi-google"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                          <a href="javascript: void(0);" class="social-list-item border-info text-info"><i
+                                  class="mdi mdi-twitter"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                          <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i
+                                  class="mdi mdi-github"></i></a>
+                      </li>
+                  </ul>
+              </div> <!-- end card-body -->
+          </div> <!-- end card -->
+
+
+
+      </div> <!-- end col-->
+
+      <div class="col-xl-8 col-lg-7">
+          <div class="card">
+              <div class="card-body">
+                  <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+
+
+                      <li class="nav-item">
+                          <a href="#settings" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                              Settings
+                          </a>
+                      </li>
+                  </ul>
+                  <div class="tab-content">
+
+
+
+                      <div class="tab-pane active"  id="settings">
+
+                              <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Les informations personnelles</h5>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                          <label for="firstname" class="form-label">Nom</label>
+                                          <input type="text"  [(ngModel)]="etudiant.name"   class="form-control" id="firstname" placeholder="Enter first name">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                          <label for="lastname" class="form-label">Prenom</label>
+                                          <input type="text" [(ngModel)]="etudiant.lastname"  class="form-control" id="lastname" placeholder="Enter last name">
+                                      </div>
+                                  </div> <!-- end col -->
+                              </div> <!-- end row -->
+
+
+
+                              <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="mb-3">
+                                      <label class="form-label">Genre</label>
+                                      <input class="form-control"  [(ngModel)]="etudiant.genre" rows="4" placeholder="Genre">
+                                  </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="userpassword" class="form-label">Age</label>
+                                        <input type="number" [(ngModel)]="etudiant.age" class="form-control" id="userpassword" placeholder="Enter password">
+
+                                    </div>
+                                </div> <!-- end col -->
+                                  <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                          <label class="form-label">Email </label>
+                                          <input type="email" class="form-control" [(ngModel)]="etudiant.email" placeholder="Enter email">
+
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                          <label for="userpassword" class="form-label">Telephone</label>
+                                          <input type="number" [(ngModel)]="etudiant.tel" class="form-control" id="userpassword" placeholder="Enter password">
+
+                                      </div>
+                                  </div> <!-- end col -->
+                              </div> <!-- end row -->
+
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                          <label for="cwebsite" class="form-label">Image</label>
+                                          <input type="file"(change)="selectedimage($event)"class="form-control" placeholder="image">
+                                      </div>
+                                  </div> <!-- end col -->
+                              </div> <!-- end row -->
+
+                              <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-earth me-1"></i> Social</h5>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                          <label for="social-fb" [(ngModel)]="etudiant.linkFb" class="form-label">Facebook</label>
+                                          <div class="input-group">
+                                              <span class="input-group-text"><i class="mdi mdi-facebook"></i></span>
+                                              <input type="text" [(ngModel)]="etudiant.linkFb"  class="form-control" id="social-fb" placeholder="Url">
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                        <label for="social-lin" class="form-label">Linkedin</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="mdi mdi-linkedin"></i></span>
+                                            <input type="text" [(ngModel)]="etudiant.linkLn"  class="form-control" id="social-lin" placeholder="Url">
+                                          </div>
+                                      </div>
+                                  </div> <!-- end col -->
+                              </div> <!-- end row -->
+
+
+
+                              <div class="text-end">
+                                  <button type="submit" (click)="update()" class="btn btn-success mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                              </div>
+
+                      </div>
+
+

@@ -1,0 +1,25 @@
+
+    <section class="bg-03">
+      <div class="container">
+          <div class="row">
+              <div class="heading">
+                  <h2>Notre equipe</h2>
+                  <span></span>
+              </div>
+
+
+
+              <div *ngFor="let f of formateur"class="col-lg-3 col-md-4 col-sm-6 col-6">
+                <div class="team-main-box">
+                    <img [src]="endpoint.url+'getimageformateur/'+ f.image" >
+                    <div class="team-content-box">
+                        <h3>{{f.name}}</h3>
+                        <b>{{f.specialite}}</b>
+                    </div>
+                </div>
+            </div>
+
+
+          </div>
+      </div>
+  </section>

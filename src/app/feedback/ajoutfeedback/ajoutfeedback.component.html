@@ -1,0 +1,39 @@
+<div class="container">
+  <div style="display: flex; justify-content: space-between;margin: 32px 24px;">
+
+    <h2>Ajouter Feedback</h2>
+
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="row ">
+  <div class="col-12 ">
+    <div class="card">
+      <div class="card-body">
+
+        <div class="row">
+
+
+
+            <div class="mb-3">
+              <label for="project-overview" class="form-label">Description</label>
+              <textarea class="form-control" [(ngModel)]="feedback.text" id="project-overview" rows="5"
+                placeholder="Saisir une description de l'emploi"></textarea>
+            </div>
+
+            <!-- Date View -->
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label"> Formation</label>
+              <select  [(ngModel)]="feedback.id_Formation" class=" form-select " >
+                <option *ngFor="let l of formation " class="form-control" value="{{l._id}}">{{l.title}}</option>
+            </select>
+            </div>
+
+</div>
+  <button class="btn btn-primary m-2 from-control  " (click)="ajout() ">Ajouter feedback </button>
+  <br>
+  <br>
+  <br>

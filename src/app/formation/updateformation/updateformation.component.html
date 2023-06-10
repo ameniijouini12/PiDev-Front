@@ -1,0 +1,98 @@
+<div class="container">
+  <div style="display: flex; justify-content: space-between;margin: 32px 24px;">
+
+    <h2>Ajouter</h2>
+    <button class="btn btn-primary col-2" routerLink="/dashboard/list-formation">Liste</button>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="row ">
+  <div class="col-12 ">
+    <div class="card">
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-xl-12">
+            <div class="mb-3">
+              <label for="projectname" class="form-label"> Titre </label>
+              <input type="text" [(ngModel)]="formation.title" id="projectname" class="form-control"
+                placeholder="Saisir un titre de formation">
+            </div>
+
+            <div class="mb-3">
+              <label for="project-overview" class="form-label">Description</label>
+              <textarea class="form-control" [(ngModel)]="formation.description" id="project-overview" rows="5"
+                placeholder="Saisir une description de l'emploi"></textarea>
+            </div>
+
+            <!-- Date View -->
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label"> Date</label>
+              <input type="datetime-local" [(ngModel)]="formation.date" class="form-control">
+            </div>
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label">nombre d'heure</label>
+              <input type="text" [(ngModel)]="formation.nbr_heure" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="example-select" class="form-label">formateur</label>
+              <select [(ngModel)]="formation.formateur" class="form-control " id="example-select">
+                <option *ngFor="let f of formateur" value=" {{f._id}}">{{f.name}} </option>
+
+              </select>
+            </div>
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label"> Spécialite</label>
+              <input type="text" [(ngModel)]="formation.specialite" class="form-control">
+            </div>
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label"> image </label>
+              <input type="file" (change)="selectedimage($event)" class="form-control" placeholder="image">
+
+            </div>
+
+
+
+              <ng-multiselect-dropdown [placeholder]="'groupe'" [settings]="dropdownSettings" [data]="etudiant"
+                [(ngModel)]="formation.groupe">
+              </ng-multiselect-dropdown>
+
+              <div class="mb-3 position-relative" id="datepicker1">
+                <label class="form-label mt-2"> Prix</label>
+                <input type="text" [(ngModel)]="formation.prix" class="form-control">
+              </div>
+              <div class="mb-3 position-relative" id="datepicker1">
+                <label class="form-label"> Technologies</label>
+                <input type="text" [(ngModel)]="formation.technologies" class="form-control">
+              </div>
+
+
+
+
+
+
+            <!-- end col-->
+
+
+            <!-- end col-->
+          </div>
+          <!-- end row -->
+
+        </div>
+        <!-- end card-body -->
+      </div>
+      <!-- end card-->
+    </div>
+    <!-- end col-->
+  </div>
+  <!-- end row-->
+</div>
+  <button class="btn btn-primary m-2 from-control  " (click)="save() ">Modifierformation </button>
+  <br>
+  <br>
+  <br>
+

@@ -1,0 +1,34 @@
+<section class="bg-04">
+  <div class="container">
+      <div class="row">
+          <div class="heading">
+              <h2>Nos Formations</h2>
+              <span></span>
+          </div>
+
+          <div *ngFor="let f of formation" class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+              <article class="blog-sub">
+                  <div class="blog-content">
+
+                      <img [src]="endpoint.url+'getimageformation/'+ f.image" style="width: 100%;height: 200px;">
+                  </div>
+                  <div class="blog-content-section">
+                      <div class="blo-content-title">
+                          <h4>{{f.title}}</h4>
+                          <p>{{f.description}}</p>
+                      </div>
+                      <div class="blog-admin">
+                          <ol>
+                       
+                              <li><i class="fal fa-calendar-alt"></i> {{f.date|date}}</li>
+                          </ol>
+                      </div>
+                  </div>
+              </article>
+          </div>
+
+
+      </div>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+<div  style="display: flex; justify-content: space-between;margin: 32px 24px;">
+
+  <h2>Espace de Depot :</h2>
+
+</div>
+
+<div class="container mt-3 ">
+
+
+  <div class="row mb-3"  >
+
+    <div class="mb-3">
+      <label for="example-select" class="form-label">formateur</label>
+      <select [(ngModel)]="depot.id_Formateur" class="form-control " id="example-select">
+        <option *ngFor="let f of formateur" [value]="f._id">{{f.name}}</option>
+
+      </select>
+    </div>
+  </div>
+
+  <div  class="row mb-3 "  data-plugin="dropzone"
+      data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+      <label class="col-1 col-form-label"> Ficher :</label>
+      <div class="col-11">
+          <input name="file" type="file"(change)="selectedimage($event)"class="form-control" />
+      </div>
+  </div>
+
+      <div class="row mb-3">
+          <label class="col-1 col-form-label"> Description:</label>
+         <div  class="col-11 " >
+          <textarea    required class="form-control" [(ngModel)]="depot.descreption"
+              id="project-overview"  placeholder="Saisir une description "></textarea>
+
+         </div>
+
+       </div>
+       <div class="justify-content-end row">
+
+              <button  class="btn btn-success col-1 mr-5" (click)="ajout()">ajouter</button>
+
+      </div>
+
+
+</div>
+
+
+<div class="container mt-5">
+
+  <div >
+
+
+
+      <div class="">
+          <div class="row" style="display: flex;justify-content: space-between;">
+              <h4 class="mb-2 col-6">Mes Depots</h4>
+
+
+              <div class="d-lg-flex col-2 ">
+                  <div class="app-search  ">
+                      <div>
+                          <div class="mb-2 position-relative">
+                              <input type="text" class="form-control" placeholder="Search files...">
+                              <span class="mdi mdi-magnify search-icon"></span>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          <div class="row mx-n1 g-0 mt-3">
+              <div class="col-xxl-3 col-lg-6"  *ngFor="let t of listt">
+                  <div class="card m-1 shadow-none border" >
+                      <div class="p-2">
+                          <div class="row align-items-center">
+                              <div class="col-auto">
+                                  <div class="avatar-sm">
+                                      <span class="avatar-title bg-light text-secondary rounded">
+                                          <i class="mdi mdi-folder-zip font-16"></i>
+                                      </span>
+                                  </div>
+                              </div>
+                              <div class="col ps-0">
+                                  <a href="javascript:void(0);" class="text-muted fw-bold">{{t.file}}</a>
+                                  <p class="mb-0 font-13">  </p>
+                              </div>
+                          </div> <!-- end row -->
+                      </div> <!-- end .p-2-->
+                  </div> <!-- end col -->
+              </div> <!-- end col-->
+
+
+
+
+          </div> <!-- end row-->
+      </div> <!-- end .mt-3-->
+
+  </div>
+</div>

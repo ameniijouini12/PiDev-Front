@@ -1,0 +1,50 @@
+
+
+
+<div class="container">
+    <div  style="display: flex; justify-content: space-between;margin: 32px 24px;">
+
+        <h2>Liste des formations</h2>
+        <button class="btn btn-primary col-2" [routerLink]="['/dashboard/ajoutformation']">Ajouter </button>
+    </div>
+
+
+</div>
+
+
+    <div class="d-lg-flex col-2 ">
+      <div class="app-search  ">
+          <div>
+              <div class="mb-2 position-relative">
+                  <input type="text" class="form-control" placeholder="Search files..." [(ngModel)]="filterTerm">
+                  <span class="mdi mdi-magnify search-icon"></span>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+
+<div class="row mt-3">
+  <div *ngFor="let f of formation | filter: filterTerm" class="col-md-3 col-sm-6">
+      <div class="film-item"  >
+          <div class="card" >
+
+               <div class="movie-title" ><h2>   {{f.nom}}</h2></div>
+               <div class="card-body" [ngClass]="'bg-green'">
+               <h4 class="card-title">{{ f.description}}<br><br>{{f.coutParticipation}}  DT</h4>
+
+               <button  class="btn btn-success "  [routerLink]="['/dashboard/profileformation' , f._id ]">voir details >></button>
+
+              <button class="btn btn-danger " (click)="delete(f.idFormation)">Supprimer</button>
+
+
+          </div>
+
+      </div>
+  </div>
+
+
+</div>
+
+

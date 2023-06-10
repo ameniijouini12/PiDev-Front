@@ -1,0 +1,69 @@
+<div class="content mt-5" >
+
+  <div class="container-fluid">
+
+
+
+      <div class="row"style="display: flex;justify-content: center;align-items:center">
+          <div class="col-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="row mb-2">
+                          <div class="col-sm-5">
+                             <h3> <a> Les depots</a></h3>
+                          </div>
+                          <div class="input-group rounded">
+                            <input type="search" class="form-control rounded" placeholder="Chercher" aria-label="chercher" aria-describedby="search-addon"    [(ngModel)]="filterTerm" />
+                            <span class="input-group-text border-0" id="search-addon">
+                              <i class="fas fa-search"></i>
+                            </span>
+                          </div>
+
+
+
+                      <div class="table-responsive">
+                          <table class="table table-centered table-striped dt-responsive nowrap w-100"
+                              id="products-datatable">
+                              <thead>
+                                  <tr>
+
+                                      <th>description</th>
+
+                                      <th>file</th>
+                                      <th>Nom</th>
+
+                                      <th style="width: 75px;">Action</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let l of depot | filter: filterTerm">
+
+
+                                      <td >
+                                          {{l.descreption}}
+                                      </td>
+
+                                      <td>
+                                          {{l.file}}
+                                      </td>
+                                      <td>
+                                          {{l.etudiant[0].name}}
+                                      </td>
+                                      <td>
+
+                                          <a [href]="endpoint.url+'getdepot/'+ l.file"><i class="uil-down-arrow"></i></a>
+                                      </td>
+                                  </tr>
+
+                              </tbody>
+                          </table>
+                      </div>
+                  </div> <!-- end card-body-->
+              </div> <!-- end card-->
+          </div> <!-- end col -->
+      </div>
+      <!-- end row -->
+
+  </div> <!-- container -->
+
+</div> <!-- content -->

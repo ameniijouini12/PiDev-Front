@@ -1,0 +1,57 @@
+<div class="container">
+  <div  style="display: flex; justify-content: space-between;margin: 32px 24px;">
+
+      <h2>Liste des feedback</h2>
+
+  </div>
+
+
+</div>
+
+<div class="d-lg-flex col-2 ">
+  <div class="app-search  ">
+      <div>
+          <div class="mb-2 position-relative">
+              <input type="text" class="form-control" placeholder="Search files..." [(ngModel)]="filterTerm">
+              <span class="mdi mdi-magnify search-icon"></span>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+<table class="table table-striped table-centered">
+  <thead>
+      <tr>
+          <th> utilisateur</th>
+          <th>feedback</th>
+          <th>formation</th>
+
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of feedback | filter: filterTerm">
+          <td class="table-user" >
+
+              {{item.utilisateur[0].name}}
+
+          </td>
+          <td>{{item.text}}</td>
+
+          <td>{{item.formation[0].title}}</td>
+          <td class="table-action">
+
+              <i (click)="delete(item._id)" class="mdi mdi-delete action-icon" ></i>
+
+          </td>
+      </tr>
+
+
+
+
+
+
+  </tbody>
+</table>
