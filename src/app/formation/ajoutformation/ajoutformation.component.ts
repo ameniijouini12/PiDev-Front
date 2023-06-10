@@ -4,6 +4,7 @@ import { FormationService } from './../../services/formation.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { Formation } from 'src/app/Models/Formation';
 
 @Component({
   selector: 'app-ajoutformation',
@@ -19,41 +20,21 @@ export class AjoutformationComponent implements OnInit {
   dropdownList = [];
   selectedItems = [];
   dropdownSettings = {};
-
+  formation :any
+  f! : Formation;
 
   ngOnInit(): void {
-   
-
-
+    console.log("formation");
   }
   
+ // image:any;
 
 
-
-
-
-
-
-  image:any;
-  formation={
-    nom:'',
-   description:'',
-   dateDebut:'',
-   dateFin:'',
-   lieu:'',
-   capaciteMaximale:'',
-   idFormateur:'',
-
-   coutParticipation:'',
-   Rating:'',
-
- 
- 
-  }
-  selectedimage(event:any){
+  
+ /* selectedimage(event:any){
     this.image=event.target.files[0];
 
-  }
+  }*/
 
   ajout(){
     let f =new FormData();
@@ -62,15 +43,14 @@ export class AjoutformationComponent implements OnInit {
     f.append('dateDebut',this.formation.dateDebut);
     f.append('dateFin',this.formation.dateFin);
     f.append('lieu',this.formation.lieu);
-    f.append('rating',this.formation.Rating);
-    f.append('idFormateur',this.formation.idFormateur);
+    f.append('rating',this.formation.rating.toString());
+    
     f.append('coutParticipation',this.formation.coutParticipation.toString());
-    f.append('capaciteMaximale',this.formation.capaciteMaximale.toString());
 
 
     this._formation.ajout(f).subscribe(
-      (res)=>{
-    console.log(res);
+      ()=>{
+    console.log(f);
     this.router.navigate(['/dashboard/list-formation'])
       },
       err=>{
@@ -79,6 +59,11 @@ export class AjoutformationComponent implements OnInit {
       }
     )
 
+  }
+
+  ajouter(f1 : any){
+    console.log(f1);
+    this._formation.ajout(f1).subscribe(() => console.log(f1));
   }
   selected = "----"
 

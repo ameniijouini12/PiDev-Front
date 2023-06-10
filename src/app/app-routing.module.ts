@@ -44,6 +44,7 @@ import { HomeComponent } from './home/home.component';
 import { FormationformateurComponent } from './formationformateur/formationformateur.component';
 import { DetailsadminComponent } from './detailsadmin/detailsadmin.component';
 import { QuestionadminComponent } from './questionadmin/questionadmin.component';
+import { AddFormationComponent } from './formation/add-formation/add-formation.component';
 
 
 const routes: Routes = [
@@ -104,7 +105,7 @@ const routes: Routes = [
     { path: 'ajoutemploi' , component: AjoutemploiComponent },
     { path: 'updateemploi/:id' , component: UpdateemploiComponent },
     { path: 'list-formation', component: ListformationComponent},
-    { path: 'ajoutformation' , component: AjoutformationComponent },
+    { path: 'ajoutformation' , component: AddFormationComponent },
     { path: 'updateformation/:id' , component: UpdateformationComponent },
     { path: 'profileformation/:id' , component: DetailsformationComponent },
     { path: 'list-feedback' , component:ListfeedbackComponent },

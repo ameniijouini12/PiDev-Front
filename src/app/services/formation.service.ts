@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { EndpointService } from './endpoint.service';
 
 @Injectable({
@@ -9,16 +10,15 @@ export class FormationService {
 
   constructor(private http : HttpClient, private endpoint:EndpointService) { }
 
-  ajout(Formation: any) {
-   
-    return this.http.post(this.endpoint.url + 'Formation/add-Formation', Formation);
+  ajout(formation: any) : Observable<any>{
+    return this.http.post<any>(this.endpoint.url + 'Formation/add-Formation', formation);
   }
   
  getAll(){
   return this.http.get(this.endpoint.url+'Formation/retrieve-all-formations');
 }
 delete(idFormation:any){
-  return this.http.delete(this.endpoint.url+'Formation/remove-Formation/{formation-id}?=',idFormation);
+  return this.http.delete(this.endpoint.url+'Formation/remove-Formation/'+idFormation);
 }
 update(id:any,formation:any){
   return this.http.put(this.endpoint.url+'formation/update/'+ id, formation);

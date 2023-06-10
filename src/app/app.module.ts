@@ -68,6 +68,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormationformateurComponent } from './formationformateur/formationformateur.component';
 import { DetailsadminComponent } from './detailsadmin/detailsadmin.component';
 import { QuestionadminComponent } from './questionadmin/questionadmin.component';
+import { AddFormationComponent } from './formation/add-formation/add-formation.component';
 
 
 FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
@@ -97,7 +98,7 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
     ListfeedbackComponent,
 
     DetailsformationComponent,
-
+    AddFormationComponent,
     UpdateformationComponent,
     ListformationComponent,
    LoginComponent,
@@ -106,7 +107,6 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
    AjoutdepotComponent,
    QuestionComponent,
    UpdateFormateurComponent,
-   AjoutformationComponent,
    AjoutfeedbackComponent,
    DashboardformateurComponent,
    FooterComponent,
@@ -140,7 +140,8 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
    PdfComponent,
    FormationformateurComponent,
    DetailsadminComponent,
-   QuestionadminComponent
+   QuestionadminComponent,
+   AddFormationComponent
 
 
 
