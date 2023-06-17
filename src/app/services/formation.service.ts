@@ -23,8 +23,8 @@ delete(idFormation:any){
 update(id:any,formation:any){
   return this.http.put(this.endpoint.url+'formation/update/'+ id, formation);
 }
-getById(id:any){
-  return this.http.get(this.endpoint.url+'Formation/retrieve-formations/'+id);
+getById(idFormation:any){
+  return this.http.get(this.endpoint.url+'Formation/retrieve-formations/'+idFormation);
 }
 getByformationbyidformateur(id:any){
   return this.http.get(this.endpoint.url+'formation/getformationbyformateur/'+id);

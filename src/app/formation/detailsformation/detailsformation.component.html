@@ -23,7 +23,7 @@
                 <a href="javascript: void(0);" class="text-center d-block mb-4">
 
                   <img
-                  [src]="endpoint.url+'getimageformation/' + formation.image "
+                  [src]="endpoint.url+'getimageformation/' "
                     class="img-fluid"
                     style="max-width: 280px"
                     alt="Product-img"
@@ -37,12 +37,13 @@
                 <form class="ps-lg-4">
                   <!-- Product title -->
                   <h3 class="mt-0">
-                    {{formation.title}}
+                    {{formation.nom}}
                     <a href="javascript: void(0);" class="text-muted"
-                      ><i [routerLink]="['/dashboard/updateformation' , formation._id ]"  class="mdi mdi-square-edit-outline ms-2"></i
+                      ><i [routerLink]="['/dashboard/updateformation' , formation.idFormation ]"  class="mdi mdi-square-edit-outline ms-2"></i
                     ></a>
                   </h3>
-                  <p class="mb-1">Date: {{formation.date}}</p>
+                  <p class="mb-1">Date du début de formation: {{formation.dateDebut}}</p>
+                  <p class="mb-1">Date fin formation: {{formation.dateDebut}}</p>
                   <p class="font-16">
                     <span class="text-warning mdi mdi-star"></span>
                     <span class="text-warning mdi mdi-star"></span>
@@ -55,14 +56,14 @@
 
                   <!-- Product description -->
                   <div class="mt-4">
-                    <h6 class="font-14"> Price:</h6>
-                    <h3>{{formation.prix}}</h3>
+                    <h6 class="font-14"> Prix:</h6>
+                    <h3>{{formation.coutParticipation}}</h3>
                   </div>
 
                   <!-- Quantity -->
                   <div class="mt-4">
                     <h6 class="font-14">Nombre de place réservé</h6>
-                    <h3>{{formation.groupe.length}}</h3>
+                    <h3>{{formation.capaciteMaximale}}</h3>
                   </div>
 
                   <!-- Product description -->
@@ -80,14 +81,8 @@
                         <h6 class="font-14">Formateur</h6>
                         <p class="text-sm lh-150">{{formateur.name}}</p>
                       </div>
-                      <div class="col-md-4">
-                        <h6 class="font-14">Technologies:</h6>
-                        <p class="text-sm lh-150">{{formation.technologies}}</p>
-                      </div>
-                      <div class="col-md-4">
-                        <h6 class="font-14">Nombres d'heures</h6>
-                        <p class="text-sm lh-150">{{formation.nbr_heure}}</p>
-                      </div>
+                     
+                 
                     </div>
                   </div>
                 </form>
@@ -95,27 +90,8 @@
               <!-- end col -->
             </div>
             <!-- end row-->
-            <h2>Groupes</h2>
-            <table class="table table-striped table-centered">
-              <thead>
-                  <tr>
-                      <th>#</th>
-                      <th> name</th>
-
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let e of formation.groupe;let i = index">
-                      <td>{{i}}</td>
-                      <td> {{e.name}} </td>
-
-                  </tr>
-
-
-
-
-              </tbody>
-          </table>
+           
+        
             <!-- end table-responsive-->
           </div>
           <!-- end card-body-->

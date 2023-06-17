@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormationService } from 'src/app/services/formation.service';
 import { FormateurService } from 'src/app/services/formateur.service';
+import { Formation } from 'src/app/Models/Formation';
 
 @Component({
   selector: 'app-detailsformation',
@@ -11,8 +12,8 @@ import { FormateurService } from 'src/app/services/formateur.service';
 })
 export class DetailsformationComponent implements OnInit {
 
-  formation :any;
-  id :any;
+  formation !:Formation;
+  idFormation :any;
 
   listformation : any;
   formateur:any
@@ -38,18 +39,9 @@ getformateurbyid(id:any){
 }
 
   getbyid(){
-    this.id = this.route.snapshot.paramMap.get('id');
-    this._formation.getById(this.id).subscribe(
-      res=>{
-        this.formation = res;
-        this.getformateurbyid(this.formation.formateur)
-        console.log(this.formation.formateur);
-
-        console.log(res);
-
-
-
-      }
+    this.idFormation = this.route.snapshot.paramMap.get('idFormation');
+    this._formation.getById(this.idFormation).subscribe(
+    
     )
   }
   getformation(){

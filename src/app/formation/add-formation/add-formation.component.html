@@ -1,77 +1,81 @@
-<div class="row ">
-    <div class="col-12 ">
-      <div class="card">
-        <div class="card-body">
-  
-          <div class="row">
-  
-            <div class="col-xl-12">
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-12">
+            <form [formGroup]="formationForm" (ngSubmit)="addFormation()" novalidate>
               <div class="mb-3">
-                <label for="projectname" class="form-label"> Nom de la Formation </label>
-                <input type="text" [(ngModel)]="formation.nom" id="projectname" class="form-control"
+                <label for="projectname" class="form-label">Nom de la Formation</label>
+                <input type="text" formControlName="nom" id="projectname" class="form-control"
                   placeholder="Saisir un titre de formation">
+                <div *ngIf="formationForm.get('nom')?.invalid && formationForm.get('nom')?.touched" class="text-danger">
+                  Le nom de la formation est requis.
+                </div>
               </div>
-  
+
               <div class="mb-3">
                 <label for="project-overview" class="form-label">Description</label>
-                <textarea class="form-control" [(ngModel)]="formation.description" id="project-overview" rows="5"
+                <textarea formControlName="description" id="project-overview" rows="5" class="form-control"
                   placeholder="Saisir une description de l'emploi"></textarea>
-              </div>
-  
-              <!-- Date View -->
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label"> Date</label>
-                <input type="datetime" [(ngModel)]="formation.dateDebut" class="form-control">
-              </div>
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label"> Date fin</label>
-                <input type="datetime" [(ngModel)]="formation.dateFin" class="form-control">
-              </div>
-              
-  
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label"> Lieu</label>
-                <input type="text" [(ngModel)]="formation.lieu" class="form-control">
-              </div>
-             
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label"> Capacité Maximale</label>
-                <input type="number" [(ngModel)]="formation.capaciteMaximale" class="form-control">
-              </div>
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label">Rating</label>
-                <input type="number" [(ngModel)]="formation.rating" class="form-control">
-              </div>
-  
-  
-  
-               
-  
-                <div class="mb-3 position-relative" id="datepicker1">
-                  <label class="form-label mt-2"> Prix</label>
-                  <input type="number" [(ngModel)]="formation.capaciteMaximale" class="form-control">
+                <div *ngIf="formationForm.get('description')?.invalid && formationForm.get('description')?.touched"
+                  class="text-danger">
+                  La description de la formation est requise.
                 </div>
-              
-  
-  
-  
-  
-  
-  
-              <!-- end col-->
-  
-  
-              <!-- end col-->
-            </div>
-            <!-- end row -->
-  
+              </div>
+
+              <div class="mb-3 position-relative" id="datepicker1">
+                <label class="form-label">Date</label>
+                <input type="datetime-local" formControlName="dateDebut" class="form-control">
+                <div *ngIf="formationForm.get('dateDebut')?.invalid && formationForm.get('dateDebut')?.touched"
+                  class="text-danger">
+                  La date de début est requise.
+                </div>
+              </div>
+
+              <div class="mb-3 position-relative" id="datepicker1">
+                <label class="form-label">Date fin</label>
+                <input type="datetime-local" formControlName="dateFin" class="form-control">
+                <div *ngIf="formationForm.get('dateFin')?.invalid && formationForm.get('dateFin')?.touched"
+                  class="text-danger">
+                  La date de fin est requise.
+                </div>
+              </div>
+
+              <div class="mb-3 position-relative" id="datepicker1">
+                <label class="form-label">Lieu</label>
+                <input type="text" formControlName="lieu" class="form-control">
+                <div *ngIf="formationForm.get('lieu')?.invalid && formationForm.get('lieu')?.touched"
+                  class="text-danger">
+                  Le lieu de la formation est requis.
+                </div>
+              </div>
+
+              <div class="mb-3 position-relative" id="datepicker1">
+                <label class="form-label">Capacité Maximale</label>
+                <input type="number" formControlName="capaciteMaximale" class="form-control">
+                <div *ngIf="formationForm.get('capaciteMaximale')?.invalid && formationForm.get('capaciteMaximale')?.touched"
+                  class="text-danger">
+                  La capacité maximale est requise.
+                </div>
+              </div>
+
+            
+
+              <div class="mb-3 position-relative" id="datepicker1">
+                <label class="form-label mt-2">Prix</label>
+                <input type="number" formControlName="coutParticipation" class="form-control">
+                <div *ngIf="formationForm.get('coutParticipation')?.invalid && formationForm.get('coutParticipation')?.touched"
+                  class="text-danger">
+                  Le prix est requis.
+                </div>
+              </div>
+              <button class="btn btn-primary m-2 from-control"  (click)="addFormation()">Ajouter formation</button> 
+            </form>
           </div>
-          <!-- end card-body -->
         </div>
-        <!-- end card-->
       </div>
-      <!-- end col-->
     </div>
-    <!-- end row-->
-    <button class="btn btn-primary m-2 from-control  " (click)="addFormation(formation)">Ajouter formation </button>
   </div>
+ 
+</div>
