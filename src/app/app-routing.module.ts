@@ -45,6 +45,7 @@ import { FormationformateurComponent } from './formationformateur/formationforma
 import { DetailsadminComponent } from './detailsadmin/detailsadmin.component';
 import { QuestionadminComponent } from './questionadmin/questionadmin.component';
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
+import {ListEventComponent} from "./event/list-event/list-event.component";
 
 
 const routes: Routes = [
@@ -87,7 +88,7 @@ const routes: Routes = [
   },
 
   { path:'dashboard' ,component: DashboardComponent , children:[
-    
+
     { path: 'question1', component:QuestionadminComponent},
     {path: '', redirectTo:'/dashboard/list-us', pathMatch: 'full'},
     { path: 'chart', component:ChartComponent},
@@ -98,6 +99,7 @@ const routes: Routes = [
     { path: 'ajoutetudiant' , component: AddEtudiantComponent },
     { path: 'updateetudiant/:id' , component: UpdateComponent },
     { path: 'list-formateur', component: ListFormateurComponent},
+    { path: 'list-Event', component: ListEventComponent},
     { path: 'ajoutformateur' , component: AddFormateurComponent },
     { path: 'updateformateur/:id' , component: UpdateFormateurComponent },
     { path: 'profileformateur/:id' , component: DetailsFormateurComponent },
