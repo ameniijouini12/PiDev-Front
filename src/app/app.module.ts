@@ -69,8 +69,8 @@ import { FormationformateurComponent } from './formationformateur/formationforma
 import { DetailsadminComponent } from './detailsadmin/detailsadmin.component';
 import { QuestionadminComponent } from './questionadmin/questionadmin.component';
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
-import { ListeventComponent } from './event/listevent/listevent.component';
-import { AjouteventComponent } from './event/ajoutevent/ajoutevent.component';
+
+import { ReclamationComponent } from './reclamation/reclamation.component';
 
 
 
@@ -145,8 +145,9 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
    DetailsadminComponent,
    QuestionadminComponent,
    AddFormationComponent,
-   ListeventComponent,
-   AjouteventComponent,
+
+   
+   ReclamationComponent,
    
 
 

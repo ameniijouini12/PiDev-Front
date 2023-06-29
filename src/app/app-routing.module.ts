@@ -45,6 +45,7 @@ import { FormationformateurComponent } from './formationformateur/formationforma
 import { DetailsadminComponent } from './detailsadmin/detailsadmin.component';
 import { QuestionadminComponent } from './questionadmin/questionadmin.component';
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
 
 
 const routes: Routes = [
@@ -93,7 +94,7 @@ const routes: Routes = [
     { path: 'chart', component:ChartComponent},
 
     { path: 'profiletudiant/:id' , component: ProfiletudiantComponent },
-    { path: 'detail/:id', component: DetailsadminComponent },
+    { path: 'detail', component: DetailsadminComponent },
     { path: 'list-us', component: ListComponent },
     { path: 'ajoutetudiant' , component: AddEtudiantComponent },
     { path: 'updateetudiant/:id' , component: UpdateComponent },
@@ -109,6 +110,7 @@ const routes: Routes = [
     { path: 'updateformation/:id' , component: UpdateformationComponent },
     { path: 'profileformation/:id' , component: DetailsformationComponent },
     { path: 'list-feedback' , component:ListfeedbackComponent },
+    { path: 'reclamation' , component:ReclamationComponent },
 
 
 
