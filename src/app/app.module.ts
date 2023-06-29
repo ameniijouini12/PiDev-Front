@@ -71,6 +71,7 @@ import { QuestionadminComponent } from './questionadmin/questionadmin.component'
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
 
 import { ReclamationComponent } from './reclamation/reclamation.component';
+import { AjoutreclamationComponent } from './reclamation/ajoutreclamation/ajoutreclamation.component';
 
 
 
@@ -148,6 +149,7 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
 
    
    ReclamationComponent,
+          AjoutreclamationComponent,
    
 
 

@@ -1,0 +1,53 @@
+<div class="container">
+    <div  style="display: flex; justify-content: space-between;margin: 32px 24px;">
+  
+        <h2>Ajouter reclamation</h2>
+        <button class="btn btn-primary col-2" routerLink="/dashboard/list-us">Liste</button>
+    </div>
+  
+  
+  </div>
+  
+  <div class="container mt-5">
+    <div class="row" style="display: flex;justify-content: center;align-items:center">
+  
+  
+      <form [formGroup]="form" (ngSubmit)="onSubmit() " class="col-6">
+     
+            <div class="form-group mb-3">
+                <div class="form-group mb-3">
+                    <label>Statut:</label>
+                    <select formControlName="statut" [(ngModel)]="reclamation.statut" class="form-control m-2">
+                      <option value="">Sélectionnez un statut</option>
+                      <option *ngFor="let statut of statuts" [value]="statut">{{ statut }}</option>
+                    </select>
+              
+              <div class="form-group mb-3">
+                <label>Date de réclamation:</label>
+                <input formControlName="date" [(ngModel)]="reclamation.date" class="form-control m-2" type="date">
+              </div>
+              
+       </div>
+  
+  
+  
+       
+  
+  
+       
+  
+  
+  
+  
+  
+       
+  
+        <div style="display: flex; justify-content: space-between;margin: 32px 24px;" class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="ajout() ">Ajouter</button>
+          <button type="button" (click)="onReset()" class="btn btn-warning float-right">réinitialiser</button>
+  
+  
+        </div>
+  
+   
+    </div>

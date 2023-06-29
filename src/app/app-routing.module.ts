@@ -46,6 +46,7 @@ import { DetailsadminComponent } from './detailsadmin/detailsadmin.component';
 import { QuestionadminComponent } from './questionadmin/questionadmin.component';
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
+import { AjoutreclamationComponent } from './reclamation/ajoutreclamation/ajoutreclamation.component';
 
 
 const routes: Routes = [
@@ -111,6 +112,7 @@ const routes: Routes = [
     { path: 'profileformation/:id' , component: DetailsformationComponent },
     { path: 'list-feedback' , component:ListfeedbackComponent },
     { path: 'reclamation' , component:ReclamationComponent },
+    { path: 'ajoutreclamation' , component:AjoutreclamationComponent },
 
 
 

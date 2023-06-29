@@ -1,7 +1,5 @@
 <div class="content">
-  <!-- end Topbar -->
 
-  <!-- Start Content-->
   <div class="container-fluid">
     <!-- start page title -->
     <div class="row">
@@ -11,8 +9,8 @@
         </div>
       </div>
     </div>
-    <!-- end page title -->
 
+    <!-- end page title -->
     <div class="row">
       <div class="col-12">
         <div class="card">
@@ -22,12 +20,8 @@
                 <!-- Product image -->
                 <a href="javascript: void(0);" class="text-center d-block mb-4">
 
-                  <img
-                  [src]="endpoint.url+'getimageformation/' "
-                    class="img-fluid"
-                    style="max-width: 280px"
-                    alt="Product-img"
-                  />
+                  <img [src]="endpoint.url+'getimageformation/' " class="img-fluid" style="max-width: 280px"
+                    alt="Product-img" />
                 </a>
 
 
@@ -38,9 +32,9 @@
                   <!-- Product title -->
                   <h3 class="mt-0">
                     {{formation.nom}}
-                    <a href="javascript: void(0);" class="text-muted"
-                      ><i [routerLink]="['/dashboard/updateformation' , formation.idFormation ]"  class="mdi mdi-square-edit-outline ms-2"></i
-                    ></a>
+                    <a href="javascript: void(0);" class="text-muted"><i
+                        [routerLink]="['/dashboard/updateformation' , formation.idFormation ]"
+                        class="mdi mdi-square-edit-outline ms-2"></i></a>
                   </h3>
                   <p class="mb-1">Date du début de formation: {{formation.dateDebut}}</p>
                   <p class="mb-1">Date fin formation: {{formation.dateDebut}}</p>
@@ -51,14 +45,13 @@
                     <span class="text-warning mdi mdi-star"></span>
                     <span class="text-warning mdi mdi-star"></span>
                   </p>
-
-
-
+               
                   <!-- Product description -->
                   <div class="mt-4">
                     <h6 class="font-14"> Prix:</h6>
                     <h3>{{formation.coutParticipation}}</h3>
                   </div>
+
 
                   <!-- Quantity -->
                   <div class="mt-4">
@@ -81,8 +74,8 @@
                         <h6 class="font-14">Formateur</h6>
                         <p class="text-sm lh-150">{{formateur.name}}</p>
                       </div>
-                     
-                 
+
+
                     </div>
                   </div>
                 </form>
@@ -90,8 +83,8 @@
               <!-- end col -->
             </div>
             <!-- end row-->
-           
-        
+
+
             <!-- end table-responsive-->
           </div>
           <!-- end card-body-->
