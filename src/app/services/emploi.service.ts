@@ -10,11 +10,11 @@ export class EmploiService {
 
   constructor(private http : HttpClient, private endpoint:EndpointService) { }
 
-  ajout(emploi:any){
+ajout(emploi:any){
     return this.http.post(this.endpoint.url +'emploi/ajout', emploi);
  }
- getAll(){
-  return this.http.get(this.endpoint.url+'emploi/getall');
+getAll(){
+  return this.http.get(this.endpoint.url+'Session/retrieve-all-sessions');
 }
 delete(id:any){
   return this.http.delete(this.endpoint.url+'emploi/delete/'+id)

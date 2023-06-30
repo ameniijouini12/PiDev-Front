@@ -12,7 +12,7 @@ import { Formation } from 'src/app/Models/Formation';
 })
 export class DetailsformationComponent implements OnInit {
 
-  formation !:Formation;
+  formation :any;
   idFormation :any;
 
   listformation : any;
@@ -24,45 +24,24 @@ export class DetailsformationComponent implements OnInit {
 
   ngOnInit(): void {
     this.getbyid();
-    this.getformation();
+  
 
   }
-getformateurbyid(id:any){
-  this.formateurs.getById(id).subscribe(
-    (res)=>{
-    console.log(res);
-  this.formateur=res;}
 
 
-  )
-
-}
+    // C
 
   getbyid(){
-    this.idFormation = this.route.snapshot.paramMap.get('idFormation');
+    this.idFormation = this.route.snapshot.paramMap.get('id');
+    console.log(this.idFormation+'ggggg')
     this._formation.getById(this.idFormation).subscribe(
-    
+      res=>{
+        this.formation = res;
+        console.log(this.idFormation)
+      }
     )
   }
-  getformation(){
-    this._formation.getAll().subscribe( (res)=>{
-      this.listformation=res;
-      console.log(res);
-
-    },
-    ( err) =>{
-      console.log(err);
-
-    })
-
- }
-  image:any;
-
-  selectedimage(event:any){
-    this.image=event.target.files[0];
-
-  }
-
+ 
 
 
 

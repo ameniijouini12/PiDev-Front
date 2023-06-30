@@ -2,6 +2,7 @@ import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core';
 import { FormationService } from '../services/formation.service';
+import { EmploiService } from '../services/emploi.service';
 
 @Component({
   selector: 'app-agendformateur',
@@ -24,13 +25,13 @@ export class AgendformateurComponent implements OnInit {
     selectMirror: true,
     dayMaxEvents: true,
   };
-  constructor(  private _formation: FormationService , private auth : AuthService) { }
+  constructor(  private _Session: EmploiService , private auth : AuthService) { }
   emploi:any
-  formation:any;
+  session:any;
   id:any;
 
   ngOnInit(): void {
-    this.id=this.auth.getUserData()._id;
+ 
     this.getallemplois();
 
   }
@@ -38,13 +39,13 @@ export class AgendformateurComponent implements OnInit {
 
 
 
-    this._formation.getByformationbyidformateur(this.id).subscribe(
+    this._Session.getAll().subscribe(
       response=>{
-        this.formation=response;
-        console.log(this.formation);
+        this.session=response;
+        console.log(this.session);
 
-        for(let e of this.formation){
-          this.Events.push( {  title: e.title, start: e.dateheure, end: e.enddate , display: 'color'  } )
+        for(let e of this.session){
+          this.Events.push( {  title: e.titre, start: e.dateDebut, end: e.dateFin , display: 'color'  } )
         }
         this.calendarOptions.events = this.Events;
       },

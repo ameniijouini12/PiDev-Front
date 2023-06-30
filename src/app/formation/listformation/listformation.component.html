@@ -34,7 +34,7 @@
                <div class="card-body" [ngClass]="'bg-green'">
                <h4 class="card-title">{{ f.description}}<br><br>{{f.coutParticipation}}  DT</h4>
 
-               <button  class="btn btn-success "  [routerLink]="['/dashboard/profileformation' , f._id ]">voir details >></button>
+               <button  class="btn btn-success "  [routerLink]="['/dashboard/profileformation' , f.idFormation ]">voir details >></button>
 
               <button class="btn btn-danger " (click)="delete(f.idFormation)">Supprimer</button>
 
