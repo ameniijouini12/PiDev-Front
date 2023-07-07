@@ -46,6 +46,7 @@ import { DetailsadminComponent } from './detailsadmin/detailsadmin.component';
 import { QuestionadminComponent } from './questionadmin/questionadmin.component';
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
 import {ListEventComponent} from "./event/list-event/list-event.component";
+import { AddEventComponent } from './event/add-event/add-event.component';
 
 
 const routes: Routes = [
@@ -101,6 +102,7 @@ const routes: Routes = [
     { path: 'list-formateur', component: ListFormateurComponent},
     { path: 'list-Event', component: ListEventComponent},
     { path: 'ajoutformateur' , component: AddFormateurComponent },
+    { path: 'ajoutevent' , component: AddEventComponent },
     { path: 'updateformateur/:id' , component: UpdateFormateurComponent },
     { path: 'profileformateur/:id' , component: DetailsFormateurComponent },
     { path: 'list-emploi', component: ListemploiComponent},

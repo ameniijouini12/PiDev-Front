@@ -62,7 +62,7 @@ export class AddEventComponent implements OnInit {
 
   }
 
-  ajouter(f1 : any){
+  addEvent(f1 : any){
     console.log(f1);
     this._evenement.ajout(f1).subscribe(() => console.log(f1));
   }

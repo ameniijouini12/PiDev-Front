@@ -24,6 +24,7 @@
     "@fullcalendar/resource-timeline": "^5.11.0",
     "@syncfusion/ej2-angular-schedule": "^20.1.47",
     "angular-calendar": "^0.29.0",
+    "boosted": "^5.2.3",
     "bootstrap": "^5.2.0-beta1",
     "chart.js": "^2.9.3",
     "jspdf": "^2.5.1",

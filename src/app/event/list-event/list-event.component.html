@@ -1,0 +1,12 @@
+<div class="card-list">
+    <div class="card" *ngFor="let event of Event">
+      <h2>{{ event.title }}</h2>
+      <p>{{ event.description }}</p>
+      <p>{{ event.date }}</p>
+      <div class="card-actions">
+        <button class="btn-details">Détails</button>
+        <button class="btn-delete" (click)="delete(event.id)">Supprimer</button>
+      </div>
+    </div>
+  </div>
+  

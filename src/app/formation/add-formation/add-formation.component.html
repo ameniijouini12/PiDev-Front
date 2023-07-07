@@ -1,77 +1,70 @@
-<div class="row ">
-    <div class="col-12 ">
-      <div class="card">
-        <div class="card-body">
-  
-          <div class="row">
-  
-            <div class="col-xl-12">
-              <div class="mb-3">
-                <label for="projectname" class="form-label"> Nom de la Formation </label>
-                <input type="text" [(ngModel)]="formation.nom" id="projectname" class="form-control"
-                  placeholder="Saisir un titre de formation">
-              </div>
-  
-              <div class="mb-3">
-                <label for="project-overview" class="form-label">Description</label>
-                <textarea class="form-control" [(ngModel)]="formation.description" id="project-overview" rows="5"
-                  placeholder="Saisir une description de l'emploi"></textarea>
-              </div>
-  
-              <!-- Date View -->
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label"> Date</label>
-                <input type="datetime" [(ngModel)]="formation.dateDebut" class="form-control">
-              </div>
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label"> Date fin</label>
-                <input type="datetime" [(ngModel)]="formation.dateFin" class="form-control">
-              </div>
-              
-  
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label"> Lieu</label>
-                <input type="text" [(ngModel)]="formation.lieu" class="form-control">
-              </div>
-             
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label"> Capacité Maximale</label>
-                <input type="number" [(ngModel)]="formation.capaciteMaximale" class="form-control">
-              </div>
-              <div class="mb-3 position-relative" id="datepicker1">
-                <label class="form-label">Rating</label>
-                <input type="number" [(ngModel)]="formation.rating" class="form-control">
-              </div>
-  
-  
-  
-               
-  
-                <div class="mb-3 position-relative" id="datepicker1">
-                  <label class="form-label mt-2"> Prix</label>
-                  <input type="number" [(ngModel)]="formation.capaciteMaximale" class="form-control">
-                </div>
-              
-  
-  
-  
-  
-  
-  
-              <!-- end col-->
-  
-  
-              <!-- end col-->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-xl-12">
+            <div class="mb-3">
+              <label for="projectname" class="form-label">Nom de la Formation</label>
+              <input type="text" [(ngModel)]="formation.nom" id="projectname" class="form-control"
+                placeholder="Saisir un titre de formation">
             </div>
-            <!-- end row -->
-  
+
+            <div class="mb-3">
+              <label for="project-overview" class="form-label">Description</label>
+              <textarea class="form-control" [(ngModel)]="formation.description" id="project-overview" rows="5"
+                placeholder="Saisir une description de l'emploi"></textarea>
+            </div>
+
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label">Date</label>
+              <input type="datetime-local" [(ngModel)]="formation.dateDebut" class="form-control">
+            </div>
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label">Date fin</label>
+              <input type="datetime-local" [(ngModel)]="formation.dateFin" class="form-control">
+            </div>
+
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label">Lieu</label>
+              <input type="text" [(ngModel)]="formation.lieu" class="form-control">
+            </div>
+
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label">Capacité Maximale</label>
+              <input type="number" [(ngModel)]="formation.capaciteMaximale" class="form-control">
+            </div>
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label">Rating</label>
+              <input type="number" [(ngModel)]="formation.rating" class="form-control">
+            </div>
+
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label mt-2">Prix</label>
+              <input type="number" [(ngModel)]="formation.coutParticipation" class="form-control">
+            </div>
+
+            <!-- Ajout de l'élément d'entrée de fichier -->
+            <div class="mb-3 position-relative" id="datepicker1">
+              <label class="form-label">Image</label>
+              <input type="file" (change)="onImageChange($event)" class="form-control">
+            </div>
+
+            <!-- end col-->
+
+            <!-- end col-->
           </div>
-          <!-- end card-body -->
+          <!-- end row -->
+
         </div>
-        <!-- end card-->
+        <!-- end card-body -->
       </div>
-      <!-- end col-->
+      <!-- end card-->
     </div>
-    <!-- end row-->
-    <button class="btn btn-primary m-2 from-control  " (click)="addFormation(formation)">Ajouter formation </button>
+    <!-- end col-->
   </div>
+  <!-- end row-->
+  <button class="btn btn-primary m-2 from-control" (click)="addFormation(formation)">Ajouter formation</button>
+</div>
