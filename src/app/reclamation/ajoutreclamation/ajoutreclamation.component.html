@@ -1,0 +1,38 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="container contact-form">
+  <div class="contact-image">
+    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+  </div>
+  <form method="post" (ngSubmit)="onSubmit()" #reclamationForm="ngForm">
+    <h3>Ajouter Reclamation </h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+            <div class="form-group">
+                <input type="text" name="txtPhone" class="form-control" placeholder="le sujet de reclamation *" [(ngModel)]="reclamation.subject" required />
+              </div>
+
+          <input type="text" name="txtName" class="form-control" placeholder="recipient *" [(ngModel)]="reclamation.recipient" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *"  />
+        </div>
+       
+        <!-- <div class="form-group">
+          <input type="file" name="fileAttachment" class="form-control" (change)="onFileSelected($event)" />
+        </div> -->
+        <div class="form-group">
+          <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" [disabled]="reclamationForm.invalid" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"[(ngModel)]="reclamation.msgBody" required ></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

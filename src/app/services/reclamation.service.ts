@@ -9,8 +9,8 @@ export class ReclamationService {
 
   constructor(private http : HttpClient, private endpoint:EndpointService) { }
 
-  ajout(reclamation: any) {
-    return this.http.post<any>(this.endpoint.url + 'reclamation/add-reclamation', reclamation);
+  ajout(mail: any) {
+    return this.http.post<any>(this.endpoint.url + 'sendMail', mail);
   }
   
  getAll(){

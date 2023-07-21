@@ -11,11 +11,11 @@ import Swal from 'sweetalert2';
 })
 export class ListemploiComponent implements OnInit {
 
-  constructor(private _emploi:EmploiService,private router:Router) { }
+  constructor(private _Session:EmploiService,private router:Router) { }
   emploi:any;
 
   ngOnInit(): void {
-    this._emploi.getAll().subscribe(
+    this._Session.getAll().subscribe(
       (res)=>{
         this.emploi=res;
         console.log(res);
@@ -45,7 +45,7 @@ export class ListemploiComponent implements OnInit {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-    this._emploi.delete(id).subscribe(
+    this._Session.delete(id).subscribe(
       res=>{
         console.log(res);
         this.ngOnInit();

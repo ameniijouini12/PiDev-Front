@@ -1,0 +1,17 @@
+<div class="notification-container">
+    <div class="send-notification">
+      <h2>Send Notification</h2>
+      <textarea [(ngModel)]="notificationContent" placeholder="Write your notification here..."></textarea>
+      <button (click)="sendNotification()">Send</button>
+    </div>
+  
+    <div class="user-notifications">
+      <h2>User Notifications</h2>
+      <ul>
+        <li *ngFor="let notification of userNotifications" class="notification-item">
+          {{ notification.content }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

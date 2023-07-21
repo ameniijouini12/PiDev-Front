@@ -46,6 +46,9 @@ import { DetailsadminComponent } from './detailsadmin/detailsadmin.component';
 import { QuestionadminComponent } from './questionadmin/questionadmin.component';
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
+import { NotificationComponent } from './notification/notification.component';
+import { AjoutreclamationComponent } from './reclamation/ajoutreclamation/ajoutreclamation.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 const routes: Routes = [
@@ -78,7 +81,7 @@ const routes: Routes = [
     {path: '', redirectTo:'Agendaform', pathMatch: 'full'},
     {path:'formationf',component:FormationformateurComponent},
     { path: 'question', component:QuestionComponent },
-    { path: 'Agendaform', component:AgendformateurComponent },
+  
     { path: 'listdepot', component:ListdepotComponent },
     { path: 'ajoutedepot', component:AjoutdepotComponent },
     { path: 'listedepot', component:ListdepotComponent },
@@ -111,7 +114,10 @@ const routes: Routes = [
     { path: 'profileformation/:id' , component: DetailsformationComponent },
     { path: 'list-feedback' , component:ListfeedbackComponent },
     { path: 'reclamation' , component:ReclamationComponent },
-
+  { path: 'Agendaform', component:AgendformateurComponent },
+  { path: 'Notification', component:NotificationComponent },
+  { path: 'ajouReclamation', component:AjoutreclamationComponent },
+  { path: 'Payement', component:PaymentComponent },
 
 
   ]
