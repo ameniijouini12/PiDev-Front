@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { EtudiantService } from '../services/etudiant.service';
+import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -32,7 +32,7 @@ export class PdfComponent implements OnInit {
 
 
 
-  constructor(private _etudiant:EtudiantService,private router:Router, private formBuilder: FormBuilder) { }
+  constructor(private _etudiant:UserService,private router:Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({

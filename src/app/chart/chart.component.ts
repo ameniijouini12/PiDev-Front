@@ -1,6 +1,6 @@
 import { ChartDataSets } from 'chart.js';
 import { FeedbackService } from './../services/feedback.service';
-import { EtudiantService } from './../services/etudiant.service';
+import { UserService } from '../services/user.service';
 import { FormationService } from './../services/formation.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
@@ -44,7 +44,7 @@ export class ChartComponent implements OnInit {
   lineChartLegend = true;
   lineChartPlugins = [];
   lineChartType = 'line';
-  constructor(private _feedback:FeedbackService ,private _reponse:ReponseService,private _question:QuestionService,private _etudiant:EtudiantService,private _formateur:FormateurService, private _formation:FormationService,private _emploi:EmploiService,private router:Router) { }
+  constructor(private _feedback:FeedbackService ,private _reponse:ReponseService,private _question:QuestionService,private _etudiant:UserService,private _formateur:FormateurService, private _formation:FormationService,private _emploi:EmploiService,private router:Router) { }
 
   ngOnInit(): void {
     this.getemploi();

@@ -1,4 +1,4 @@
-import { EtudiantService } from 'src/app/services/etudiant.service';
+import { UserService } from 'src/app/services/user.service';
 import { FormateurService } from './../../services/formateur.service';
 import { FormationService } from './../../services/formation.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +14,7 @@ import { Formation } from 'src/app/Models/Formation';
 export class AjoutformationComponent implements OnInit {
   
 
-  constructor(private _formation:FormationService,private router:Router,private _formateur:FormateurService,private _etudiant:EtudiantService) { }
+  constructor(private _formation:FormationService,private router:Router,private _formateur:FormateurService,private _etudiant:UserService) { }
   formateur:any;
   etudiant:any;
   dropdownList = [];

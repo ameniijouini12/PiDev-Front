@@ -72,6 +72,7 @@ import { AddFormationComponent } from './formation/add-formation/add-formation.c
 
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { AjoutreclamationComponent } from './reclamation/ajoutreclamation/ajoutreclamation.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -150,6 +151,7 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
    
    ReclamationComponent,
           AjoutreclamationComponent,
+          RegisterComponent,
    
 
 

@@ -1,7 +1,7 @@
 import { EndpointService } from './../../services/endpoint.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EtudiantService } from 'src/app/services/etudiant.service';
+import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ProfiletudiantComponent implements OnInit {
 
-  constructor( private _etudiant: EtudiantService , private route: ActivatedRoute ,  public endpoint:EndpointService,private router:Router) { }
+  constructor( private _etudiant: UserService , private route: ActivatedRoute ,  public endpoint:EndpointService,private router:Router) { }
 
 response:any
   id: any;

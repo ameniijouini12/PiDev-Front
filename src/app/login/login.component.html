@@ -25,18 +25,7 @@
                   <!-- form -->
                   <div >
 
-                      <div class="mb-3">
-                          <label for="emailaddress" class="form-label">Se connecter en tant que</label>
-                          <select name="" id="" class="form-control" [(ngModel)]="selected">
-                              <option value="1">Administrateur</option>
-                              <option value="2">Formateur</option>
-                              <option value="2">Responsable Eventify </option>
-                              <option value="3">utilisateur</option>
-
-
-                          </select>
-
-                      </div>
+                     
 
                       <div class="mb-3">
                           <label for="emailaddress" class="form-label">E-mail </label>
@@ -50,8 +39,12 @@
 
 
                       <div class="d-grid mb-0 text-center ">
-                          <button  (click)="login()" class="btn btn-primary" type="submit"> <i class="mdi mdi-login"></i>  Se connecter </button>
+                          <button (click)="authenticate()" class="btn btn-primary" type="submit"> <i class="mdi mdi-login"></i> Se connecter </button>
+
                       </div>
+
+                      <div *ngIf="showLoginError">USER BLOCKED OR PASSWORD INVALID</div>
+
                       <!-- social-->
 
                   </div>

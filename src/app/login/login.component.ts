@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -9,12 +11,34 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _auth:AuthService,private router:Router) { }
+  constructor(private _auth:AuthService,private router:Router , private http: HttpClient) { }
 
   user ={
     email:'',
     password:''
   }
+
+  showLoginError!: boolean;
+
+
+
+  authenticate() {
+    this.http.post<any>('http://localhost:8081/PIDev/AUTH/auth/authenticate', this.user).subscribe(
+      response => {
+        if (response.token) {
+          this.router.navigate(['/dashboard']);
+          this.showLoginError = false;
+        } else {
+          this.showLoginError = true;
+        }
+      },
+      error => {
+        // Handle any errors
+        console.error(error);
+      }
+    );
+  }
+
 
   selected = '3';
 

@@ -1,0 +1,112 @@
+
+
+    <div class="">
+        <!--Auth fluid left content -->
+        <div class="auth-fluid-form-box">
+            <div class="align-items-center d-flex h-100">
+                <div class="card-body">
+  
+                    <!-- Logo -->
+                    <div class="auth-brand text-center text-lg-start">
+                        <a href="index.html" class="logo-dark">
+                          <span><img src="assets/images/logoo.png" alt="" height="90" width="90"></span>
+                        </a>
+                        <a href="index.html" class="logo-light">
+  
+                        </a>
+                    </div>
+                    <br>
+                    <br>
+  <br>
+                    <!-- title-->
+                    <h4 class="mt-0">Inscription</h4>
+  
+                    <!-- form -->
+                    <div class="row" style="display: flex;justify-content: center;align-items:center">
+
+
+                        <form [formGroup]="form" (ngSubmit)="onSubmit() " class="col-6">
+                          <div class="form-group mb-3">
+                            <input pattern="[a-zA-Z ]*" formControlName="firstName"  type="text" [(ngModel)]="user.firstName"   class="form-control m-2" placeholder="nom">
+                            <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="text-danger">
+                              <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">Inserer le nom</div>
+                              <div *ngIf="f['firstName'].errors?.['pattern'] ">seulement des lettres</div>
+                            </div>
+                          </div>
+                    
+                          <div class="form-group mb-3">
+                            <input pattern="[a-zA-Z ]*" formControlName="lastName" type="text" [(ngModel)]="user.lastName"   class="form-control m-2" placeholder="prenom">
+                            <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="text-danger">
+                              <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">Inserer le prenom</div>
+                              <div *ngIf="f['lastName'].errors?.['pattern'] ">seulement des lettres</div>
+                            </div>
+                          </div>
+                    
+                    
+                    
+                          <div class="form-group mb-3">
+                            <input pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="email" type="text" [(ngModel)]="user.email"   class="form-control m-2" placeholder="email">
+                            <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger">
+                              <div *ngIf="f['email'].errors && f['email'].errors['required']">ajouter email</div>
+                              <div *ngIf="f['email'].errors?.['pattern'] ">aaaaa@gmail.com !!</div>
+                            </div>
+                          </div>
+                    
+                    
+                          <div class="form-group mb-3">
+                            <input formControlName="password" type="password" [(ngModel)]="user.password"   class="form-control m-2" placeholder="password">
+                            <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger">
+                              <div *ngIf="f['password'].errors && f['password'].errors['required']">ajouter mot de passe</div>
+                            </div>
+                          </div>
+                    
+                    
+                          <div class="form-group mb-3">
+                            <input pattern="^((\\+216-?)|0)?[0-9]{8}$" formControlName="numero" type="text" [(ngModel)]="user.numero"   class="form-control m-2" placeholder="numero">
+                            <div *ngIf="f['numero'].touched && f['numero'].invalid" class="text-danger">
+                              <div *ngIf="f['numero'].errors && f['numero'].errors['required']">téléphone obligatoire</div>
+                              <div *ngIf="f['numero'].errors?.['pattern'] ">22 555 999 () 8 chiffres</div>
+                            </div>
+                          </div>
+                    
+                          <div class="form-group mb-3">
+                            <select formControlName="userType"  [(ngModel)]="user.userType" class=" form-select m-2" id="example-select ">
+                              <option value=""></option>
+                              <option value="UTILISATEUR">UTILISATEUR</option>
+                              <option value="FORMATEUR">FORMATEUR</option>
+                              <option value="RESPONSABLE_EVENT">RESPONSABLE_EVENT</option>
+                            </select>
+                          </div>
+                    
+                          
+                    
+                    
+                         
+                    
+                          <div style="display: flex; justify-content: space-between;margin: 32px 24px;" class="form-group">
+                            <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="ajout() ">Ajouter</button>
+                            <button type="button" (click)="onReset()" class="btn btn-warning float-right">réinitialiser</button>
+                    
+                    
+                          </div>
+                    
+                        </form>
+                      </div>
+                    <!-- end form-->
+  
+                    <!-- Footer-->
+  
+  
+                </div> <!-- end .card-body -->
+            </div> <!-- end .align-items-center.d-flex.h-100-->
+        </div>
+        <!-- end auth-fluid-form-box-->
+  
+        <!-- Auth fluid right content -->
+  
+  
+        <!-- end Auth fluid right content -->
+    </div>
+    <!-- end auth-fluid-->
+  
+  

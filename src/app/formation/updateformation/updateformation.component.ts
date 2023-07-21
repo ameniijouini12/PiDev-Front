@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { EtudiantService } from 'src/app/services/etudiant.service';
+import { UserService } from 'src/app/services/user.service';
 import { FormateurService } from 'src/app/services/formateur.service';
 import { FormationService } from 'src/app/services/formation.service';
 import Swal from 'sweetalert2';
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class UpdateformationComponent implements OnInit {
 
-  constructor(private _formation:FormationService,private router:Router,private _formateur:FormateurService,private _etudiant:EtudiantService,private route:ActivatedRoute) { }
+  constructor(private _formation:FormationService,private router:Router,private _formateur:FormateurService,private _etudiant:UserService,private route:ActivatedRoute) { }
   formateur:any;
   etudiant:any;
   id:any;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmploiService } from 'src/app/services/emploi.service';
-import { EtudiantService } from 'src/app/services/etudiant.service';
+import { UserService } from 'src/app/services/user.service';
 import { FormateurService } from 'src/app/services/formateur.service';
 import { FormationService } from 'src/app/services/formation.service';
 
@@ -16,7 +16,7 @@ export class StatComponent implements OnInit {
   formation:any;
   emploi:any
 
-  constructor(private _etudiant:EtudiantService,private _formateur:FormateurService,private _emploi:EmploiService, private _formation:FormationService,private router:Router) { }
+  constructor(private _etudiant:UserService,private _formateur:FormateurService,private _emploi:EmploiService, private _formation:FormationService,private router:Router) { }
 
   ngOnInit(): void {
     this.getformation();

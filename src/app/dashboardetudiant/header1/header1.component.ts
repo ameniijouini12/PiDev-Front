@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { EndpointService } from '../../services/endpoint.service';
-import { EtudiantService } from '../../services/etudiant.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-header1',
@@ -11,7 +11,7 @@ import { EtudiantService } from '../../services/etudiant.service';
 })
 export class Header1Component implements OnInit {
 
-  constructor(private router : Router , private etudiantservice : EtudiantService , private route : ActivatedRoute, private auth: AuthService,public endpoint:EndpointService) { }
+  constructor(private router : Router , private UserService : UserService , private route : ActivatedRoute, private auth: AuthService,public endpoint:EndpointService) { }
   id:any;
 
   etudiant : any;
@@ -26,7 +26,7 @@ export class Header1Component implements OnInit {
   getbyid(){
 
 
-    this.etudiantservice.getById(this.id).subscribe(
+    this.UserService.getById(this.id).subscribe(
       res=>{
         this.etudiant = res;
         console.log(this.etudiant);

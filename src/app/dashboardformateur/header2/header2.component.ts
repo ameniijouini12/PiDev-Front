@@ -1,5 +1,5 @@
 import { FormateurService } from './../../services/formateur.service';
-import { EtudiantService } from './../../services/etudiant.service';
+import { UserService } from '../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';

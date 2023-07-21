@@ -47,6 +47,7 @@ import { QuestionadminComponent } from './questionadmin/questionadmin.component'
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { AjoutreclamationComponent } from './reclamation/ajoutreclamation/ajoutreclamation.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -60,6 +61,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   {path: '', redirectTo:'/home', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
+  { path: 'register' , component: RegisterComponent },
+
   { path: 'dashboardetudiant' ,component: DashboardetudiantComponent , children:[
 
     {path: '', redirectTo:'agenda', pathMatch: 'full'},
@@ -97,7 +100,7 @@ const routes: Routes = [
     { path: 'profiletudiant/:id' , component: ProfiletudiantComponent },
     { path: 'detail', component: DetailsadminComponent },
     { path: 'list-us', component: ListComponent },
-    { path: 'ajoutetudiant' , component: AddEtudiantComponent },
+    { path: 'ajouterUser' , component: AddEtudiantComponent },
     { path: 'updateetudiant/:id' , component: UpdateComponent },
     { path: 'list-formateur', component: ListFormateurComponent},
     { path: 'ajoutformateur' , component: AddFormateurComponent },

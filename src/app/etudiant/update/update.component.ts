@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EtudiantService } from 'src/app/services/etudiant.service';
+import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,7 +12,7 @@ export class UpdateComponent implements OnInit {
 
   id:any;
   response:any;
-    constructor(private route:ActivatedRoute,private _etudiant:EtudiantService,private router:Router) { }
+    constructor(private route:ActivatedRoute,private _etudiant:UserService,private router:Router) { }
 
 
     ngOnInit(): void {

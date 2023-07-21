@@ -4,7 +4,7 @@ import { ReponseService } from './../services/reponse.service';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../services/question.service';
-import { EtudiantService } from '../services/etudiant.service';
+import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,7 +20,7 @@ export class QuestionComponent implements OnInit {
   etudiant : any;
   formateur : any;
   response : any;
-    constructor( public endpoint:EndpointService,private questionservice : QuestionService, private auth:AuthService,private etudiantservice : EtudiantService, private router:Router , private reponseservice : ReponseService , private formateurservice : FormateurService) { }
+    constructor( public endpoint:EndpointService,private questionservice : QuestionService, private auth:AuthService,private UserService : UserService, private router:Router , private reponseservice : ReponseService , private formateurservice : FormateurService) { }
 
     ngOnInit(): void {
       this.id=this.auth.getUserData()._id;
@@ -53,7 +53,7 @@ export class QuestionComponent implements OnInit {
   getbyid(){
 
 
-    this.etudiantservice.getById(this.id).subscribe(
+    this.UserService.getById(this.id).subscribe(
       res=>{
         this.etudiant = res;
         console.log(this.etudiant);
