@@ -1,0 +1,16 @@
+<div class="booking-list">
+  <h1>Bookings</h1>
+  <div class="booking-items">
+    <div class="booking-item" *ngFor="let booking of bookings">
+      <div class="booking-info">
+        <h2>User: {{ booking.user.nom}}</h2>
+        <!-- <p>Event: {{ booking }}</p> -->
+        <p>Price: {{ booking.price }}</p>
+        <p>Status: {{ booking.state ? 'Confirmed' : 'Pending' }}</p>
+      </div>
+      <div class="booking-actions">
+        <!-- Add any actions you want for each booking -->
+      </div>
+    </div>
+  </div>
+</div>

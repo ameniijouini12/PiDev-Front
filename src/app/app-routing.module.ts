@@ -47,6 +47,8 @@ import { QuestionadminComponent } from './questionadmin/questionadmin.component'
 import { AddFormationComponent } from './formation/add-formation/add-formation.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { AjoutreclamationComponent } from './reclamation/ajoutreclamation/ajoutreclamation.component';
+import {AddEventComponent} from "./event/add-event/add-event.component";
+import {ListEventComponent} from "./event/list-event/list-event.component";
 
 
 const routes: Routes = [
@@ -89,7 +91,7 @@ const routes: Routes = [
   },
 
   { path:'dashboard' ,component: DashboardComponent , children:[
-    
+
     { path: 'question1', component:QuestionadminComponent},
     {path: '', redirectTo:'/dashboard/list-us', pathMatch: 'full'},
     { path: 'chart', component:ChartComponent},
@@ -101,7 +103,9 @@ const routes: Routes = [
     { path: 'updateetudiant/:id' , component: UpdateComponent },
     { path: 'list-formateur', component: ListFormateurComponent},
     { path: 'ajoutformateur' , component: AddFormateurComponent },
-    { path: 'updateformateur/:id' , component: UpdateFormateurComponent },
+      { path: 'ajoutevent' , component: AddEventComponent },
+      { path: 'list-Event', component: ListEventComponent},
+      { path: 'updateformateur/:id' , component: UpdateFormateurComponent },
     { path: 'profileformateur/:id' , component: DetailsFormateurComponent },
     { path: 'list-emploi', component: ListemploiComponent},
     { path: 'ajoutemploi' , component: AjoutemploiComponent },

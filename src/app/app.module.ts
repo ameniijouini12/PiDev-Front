@@ -72,8 +72,10 @@ import { AddFormationComponent } from './formation/add-formation/add-formation.c
 
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { AjoutreclamationComponent } from './reclamation/ajoutreclamation/ajoutreclamation.component';
-
-
+import {AddEventComponent} from "./event/add-event/add-event.component";
+import {DeleteEventComponent} from "./event/delete-event/delete-event.component";
+import {ListEventComponent} from "./event/list-event/list-event.component";
+import {BookingComponent} from "./booking/booking.component";
 
 FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
 
@@ -146,11 +148,14 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
    DetailsadminComponent,
    QuestionadminComponent,
    AddFormationComponent,
+    AddEventComponent,
+    DeleteEventComponent,
+    ListEventComponent,
+    BookingComponent,
 
-   
    ReclamationComponent,
           AjoutreclamationComponent,
-   
+
 
 
 
